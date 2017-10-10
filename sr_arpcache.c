@@ -134,8 +134,7 @@ void handle_arpreq(struct sr_arpreq *arp_req, struct sr_instance *sr) {
     return;
 }
 
-
-  void sr_broadcast_arpreq(struct sr_instance* sr, struct sr_arpreq *req) {
+void sr_broadcast_arpreq(struct sr_instance* sr, struct sr_arpreq *req) {
     struct sr_if *broad_if = sr_get_interface(sr, req->packets->iface);    
     uint8_t *arp_req_hdr = (uint8_t *)malloc(sizeof(sr_ethernet_hdr_t)+sizeof(sr_arp_hdr_t));
     
